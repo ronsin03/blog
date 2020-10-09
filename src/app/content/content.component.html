@@ -1,0 +1,20 @@
+<div class="container" style="padding: 5%;">
+    <div>
+        <h2>COURSE LIST</h2><br>
+         <button class="btn btn-info" (click)="goToAddCoursePage()">Add Course </button>
+    </div><br>
+    <div class="alert alert-info" role="alert" *ngFor="let course of courses">
+        <div class="d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap">
+            <div class="p-2">
+                <h5 class="alert-heading">
+                    {{course.fields.title}}
+                </h5>
+                <div>{{ course.fields.slug}}</div>
+                <div><i>{{ course.fields.shortDescription}}</i></div>
+                <br>
+                <div><i>{{ course.sys.createdAt | date: 'dd/MM/yyyy'}}</i></div>
+                <button class="btn btn-info" (click)="goToCourseDetailPage(course.sys.id)">Course Details</button>
+            </div>
+        </div>
+    </div>
+</div>

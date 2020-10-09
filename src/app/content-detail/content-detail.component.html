@@ -1,0 +1,9 @@
+<div class="container" style="padding:5%;" *ngIf="course.fields">
+    <h2>{{ course.fields.title }}</h2>
+    <i>by {{course.fields.slug }}</i>
+    <br><br>
+    <div [innerHTML]=" course.fields.description | mdToHTML"> {{ course.fields.description}} </div>
+    <br><br>
+    <div><i>{{ course.sys.createdAt | date: 'dd/MM/yyyy'}}</i></div>
+    <button class="btn btn-danger" (click)="goToList()">Back</button>
+</div>
